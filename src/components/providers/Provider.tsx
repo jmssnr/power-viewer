@@ -1,6 +1,7 @@
 import React from "react";
 import ReactQueryProvider from "./ReactQueryProvider";
 import CountryContextProvider from "./CountryContextProvider";
+import DateContextProvider from "./DateContextProvider";
 type ProviderProps = {
   children: React.ReactNode;
 };
@@ -8,7 +9,9 @@ type ProviderProps = {
 const Provider = ({ children }: ProviderProps) => {
   return (
     <ReactQueryProvider>
-      <CountryContextProvider>{children}</CountryContextProvider>
+      <CountryContextProvider>
+        <DateContextProvider>{children}</DateContextProvider>
+      </CountryContextProvider>
     </ReactQueryProvider>
   );
 };

@@ -20,13 +20,21 @@ export const SelectItem = ({ children, ...props }: SelectItemProps) => {
   );
 };
 
-type SelectProps = SelectPrimitive.SelectProps;
+type SelectProps = { placeholder?: string } & SelectPrimitive.SelectProps;
 
 export const Select = ({ children, ...props }: SelectProps) => {
   return (
     <SelectPrimitive.Root {...props}>
       <SelectPrimitive.Trigger className={classes.trigger}>
-        <SelectPrimitive.Value />
+        <span
+          style={{
+            overflow: "hidden",
+            textOverflow: "ellipsis",
+            whiteSpace: "nowrap",
+          }}
+        >
+          <SelectPrimitive.Value placeholder={props.placeholder} />
+        </span>
         <SelectPrimitive.Icon>
           <ChevronDownIcon />
         </SelectPrimitive.Icon>
