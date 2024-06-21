@@ -9,7 +9,8 @@ import PowerGenerationChart from "./components/PowerGenerationChart";
 import KPIBar from "./components/KPIBar";
 
 export default function Monitoring() {
-  const [powerType, setPowerType] = useState("");
+  const [powerType, setPowerType] = useState(0);
+
   return (
     <>
       <h1 className={classes.title}>Monitor Public Power Generation</h1>

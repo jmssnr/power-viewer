@@ -5,11 +5,11 @@ import Skeleton from "@/components/primitives/Skeleton";
 import { useGetPowerGeneration } from "@/hooks/useGetPowerGeneration";
 import KPICard from "../KPICard";
 
-type KPIBarProps = { selection: string };
+type KPIBarProps = { selection: number };
 
 const valueHelper = (
   key: string,
-  selection: string,
+  selection: number,
   data: any,
   isPending: boolean,
   isError: boolean
@@ -22,14 +22,7 @@ const valueHelper = (
     return "An error occured";
   }
 
-  //@ts-ignore
-  const selectedIndex = data.findIndex((d) => d.name === selection);
-
-  if (selectedIndex === -1) {
-    return;
-  }
-
-  return data[selectedIndex][key].toFixed(2);
+  return data[selection][key].toFixed(2);
 };
 
 const KPIBar = ({ selection }: KPIBarProps) => {
