@@ -1,0 +1,88 @@
+@import "@radix-ui/colors/gray.css";
+@import "@radix-ui/colors/plum.css";
+@import "@radix-ui/colors/blue.css";
+@import "@radix-ui/colors/red.css";
+@import "@radix-ui/colors/yellow.css";
+@import "@radix-ui/colors/green.css";
+@import "@radix-ui/colors/orange.css";
+
+:root {
+  /* App background */
+  --accent-base: var(--plum-1);
+
+  /* Subtle background */
+  --accent-subtle-bg: var(--plum-2);
+
+  /* UI element background */
+  --accent-bg: var(--plum-3);
+
+  /* Hovered UI element background */
+  --accent-bg-hover: var(--plum-4);
+
+  /* Active / Selected UI element background */
+  --accent-bg-active: var(--plum-5);
+
+  /* Subtle borders and separators */
+  --accent-line: var(--plum-6);
+
+  /* UI element border and focus rings */
+  --accent-border: var(--plum-7);
+
+  /* Hovered UI element border */
+  --accent-border-hover: var(--plum-8);
+
+  /* Solid backgrounds */
+  --accent-solid: var(--plum-9);
+
+  /* Hovered solid backgrounds */
+  --accent-solid-hover: var(--plum-10);
+
+  /* Low-contrast text */
+  --accent-text: var(--plum-11);
+
+  /* High-contrast text */
+  --accent-text-contrast: var(--plum-12);
+
+  /* App background */
+  --gray-base: var(--gray-1);
+
+  /* Subtle background */
+  --gray-subtle-bg: var(--gray-2);
+
+  /* UI element background */
+  --gray-bg: var(--gray-3);
+
+  /* Hovered UI element background */
+  --gray-bg-hover: var(--gray-4);
+
+  /* Active / Selected UI element background */
+  --gray-bg-active: var(--gray-5);
+
+  /* Subtle borders and separators */
+  --gray-line: var(--gray-6);
+
+  /* UI element border and focus rings */
+  --gray-border: var(--gray-7);
+
+  /* Hovered UI element border */
+  --gray-border-hover: var(--gray-8);
+
+  /* Solid backgrounds */
+  --gray-solid: var(--gray-9);
+
+  /* Hovered solid backgrounds */
+  --gray-solid-hover: var(--gray-10);
+
+  /* Low-contrast text */
+  --gray-text: var(--gray-11);
+
+  /* High-contrast text */
+  --gray-text-contrast: var(--gray-12);
+
+  /* Chart colors */
+  --chart-blue: var(--blue-9);
+  --chart-red: var(--red-9);
+  --chart-green: var(--green-9);
+  --chart-yellow: var(--yellow-9);
+  --chart-orange: var(--orange-9);
+}
