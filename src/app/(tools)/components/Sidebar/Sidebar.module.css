@@ -4,3 +4,35 @@
   padding: 10px;
   border-right: 1px solid var(--gray-line);
 }
+
+.rootCollapsed {
+  composes: root;
+  width: 60px;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.link {
+  text-decoration: none;
+  border: 1px solid var(--accent-line);
+  padding: 10px;
+  border-radius: 10px;
+  color: var(--accent-text);
+}
+
+.link:hover {
+  background-color: var(--accent-bg-hover);
+}
+
+.linkHighlight {
+  composes: link;
+  background-color: var(--accent-bg-active);
+}
+
+.linkHighlight:hover {
+  background-color: var(--accent-bg-active);
+}
