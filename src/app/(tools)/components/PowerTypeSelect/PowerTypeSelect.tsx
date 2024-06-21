@@ -4,7 +4,12 @@ import { Select, SelectItem } from "@/components/primitives/Select";
 import { useGetPowerGeneration } from "@/hooks/useGetPowerGeneration";
 import Skeleton from "@/components/primitives/Skeleton";
 
-const PowerTypeSelect = () => {
+type PowerTypeSelectProps = {
+  value: string;
+  setValue: (v: string) => void;
+};
+
+const PowerTypeSelect = ({value, setValue}: PowerTypeSelectProps) => {
   const { data, isPending, isError } = useGetPowerGeneration();
 
   if (isPending) {
@@ -16,7 +21,7 @@ const PowerTypeSelect = () => {
   }
 
   return (
-    <Select placeholder="Select a power type" required>
+    <Select placeholder="Select a power type" required value={value} onValueChange={setValue}>
       {data.map((type, idx) => (
         <SelectItem key={idx} value={type.name}>
           {type.name}
