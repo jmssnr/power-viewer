@@ -22,7 +22,7 @@ const valueHelper = (
     return "An error occured";
   }
 
-  return data[selection][key].toFixed(2);
+  return `${data[selection][key].toFixed(2)} MW`;
 };
 
 const KPIBar = ({ selection }: KPIBarProps) => {

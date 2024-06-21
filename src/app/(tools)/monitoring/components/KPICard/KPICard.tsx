@@ -1,8 +1,9 @@
 import Card from "@/components/primitives/Card";
+import React from "react";
 
 type KPICardProps = {
   title: string;
-  value: string;
+  value: string | React.ReactNode;
 };
 
 const KPICard = ({ title, value }: KPICardProps) => {

@@ -8,7 +8,9 @@ export default function Monitoring() {
   const { country } = useCountryContext();
   return (
     <>
-      <h1 className={classes.title}>Monitor Public Power Generation</h1>
+      <h1 className={classes.title}>
+        Monitor Public Net Electricity Generation
+      </h1>
       <MonitoringView key={country} />
     </>
   );
