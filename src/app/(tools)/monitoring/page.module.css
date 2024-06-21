@@ -1,0 +1,14 @@
+.title {
+  color: var(--gray-text);
+  font-weight: 600;
+}
+
+.toolbar {
+  display: flex;
+  justify-content: space-between;
+}
+
+.selects {
+  display: flex;
+  gap: 15px;
+}

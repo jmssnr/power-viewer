@@ -1,0 +1,15 @@
+.root {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: auto 1fr;
+}
+
+.content {
+  padding: 20px 30px;
+  background-color: var(--gray-subtle-bg);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  overflow-y: auto;
+  height: 100vh;
+}

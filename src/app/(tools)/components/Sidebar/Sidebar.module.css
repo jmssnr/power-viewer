@@ -1,0 +1,6 @@
+.root {
+  width: 200px;
+  background-color: var(--gray-base);
+  padding: 10px;
+  border-right: 1px solid var(--gray-line);
+}
