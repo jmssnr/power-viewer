@@ -34,7 +34,7 @@ const SimpleLineChart = <Datum extends object>(
             <rect
               width={innerWidth}
               height={innerHeight}
-              fill="var(--gray-subtle-bg)"
+              fill="var(--gray-bg)"
             />
             <LinePath
               data={data}

@@ -5,11 +5,11 @@
   width: 200px;
   border-radius: 4px;
   padding: 0 15px;
-  font-size: 13px;
+  font-size: 0.8rem;
   line-height: 1;
   height: 35px;
   gap: 5px;
-  background-color: var(--gray-subtle-bg);
+  background-color: var(--gray-base);
   color: var(--gray-text);
   box-shadow: var(--shadow-3);
   border: 1px solid var(--gray-border);
