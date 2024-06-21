@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { usePathname } from "next/navigation";
 import Link from "next/link";
 import classes from "./Sidebar.module.css";
@@ -39,29 +40,40 @@ const Sidebar = () => {
           alignItems: "stretch",
         }}
       >
-        <div className={classes.list}>
-          {links.map((link, i) => (
-            <Link
-              key={i}
-              className={
-                path === link.href ? classes.linkHighlight : classes.link
-              }
-              href={link.href}
-            >
-              <span
-                style={{
-                  display: "flex",
-                  justifyContent: "space-evenly",
-                  alignItems: "center",
-                }}
+        <div style={{ display: "flex", flexDirection: "column", gap: "50px" }}>
+          <Image
+            src="/power-views-logo.png"
+            width={40}
+            height={40}
+            alt="PowerViews"
+          />
+          <div className={classes.list}>
+            {links.map((link, i) => (
+              <Link
+                key={i}
+                className={
+                  path === link.href ? classes.linkHighlight : classes.link
+                }
+                href={link.href}
               >
-                {link.icon} {open && link.label}
-              </span>
-            </Link>
-          ))}
+                <span
+                  style={{
+                    display: "flex",
+                    justifyContent: "space-evenly",
+                    alignItems: "center",
+                  }}
+                >
+                  {link.icon} {open && link.label}
+                </span>
+              </Link>
+            ))}
+          </div>
         </div>
         <button
           style={{
+            position: "relative",
+            top: 0,
+            left: 30,
             width: 40,
             height: 40,
             alignSelf: "end",
@@ -70,7 +82,7 @@ const Sidebar = () => {
             color: "var(--accent-text)",
             backgroundColor: "var(--accent-bg-active)",
             border: "1px solid var(--accent-line)",
-            borderRadius: "5px",
+            borderRadius: "50%",
           }}
           onClick={() => setOpen(!open)}
         >
