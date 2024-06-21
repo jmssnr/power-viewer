@@ -3,10 +3,15 @@ export type ResponseType = {
   production_types: { name: string; data: number[] }[];
 };
 
+type Datum = {
+  timestamp: number, 
+  value: number
+} 
+
 export type PowerGenerationDatum = {
   name: string;
   min: number;
   max: number;
   avg: number;
-  data: { timestamp: number; value: number }[];
+  data: Datum[];
 };
