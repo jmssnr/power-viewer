@@ -31,7 +31,7 @@ const DailyAverageHeatmap = () => {
   return (
     <Card style={{ minHeight: 200 }}>
       <CalendarHeatmap
-        data={data}
+        data={data as unknown as Datum[]}
         dateAccessor={dateAccessor}
         valueAccessor={valueAccessor}
       />
