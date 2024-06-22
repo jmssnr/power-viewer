@@ -6,4 +6,4 @@ The application is built with based on [Next.js](https://nextjs.org/), [visx](ht
 
 https://power-viewer.vercel.app/monitoring
 
-![screenshot](public/MonitoringScreenshot.png)
+![screenshot](public/demo.png)
