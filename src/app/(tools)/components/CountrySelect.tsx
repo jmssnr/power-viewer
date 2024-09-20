@@ -14,7 +14,7 @@ const CountrySelect = () => {
   const [country, setCountry] = useQueryState("country");
   const { data } = useGetCountries();
 
-  const options = data.map((country, i) => (
+  const options = data.map((country) => (
     <SelectItem key={country.value} value={country.value}>
       {country.label}
     </SelectItem>
