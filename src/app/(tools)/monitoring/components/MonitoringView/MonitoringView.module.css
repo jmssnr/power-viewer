@@ -1,9 +1,0 @@
-.toolbar {
-  display: flex;
-  justify-content: space-between;
-}
-
-.selects {
-  display: flex;
-  gap: 15px;
-}
