@@ -1,4 +1,5 @@
 import { Button } from "@/components/ui/Button";
+import Link from "next/link";
 
 export default function Home() {
   return (
@@ -11,7 +12,9 @@ export default function Home() {
           </h2>
         </div>
         <div className="flex gap-4 w-full">
-          <Button className="w-full">Get started</Button>
+          <Button asChild className="w-full">
+            <Link href="/analyze">Get started</Link>
+          </Button>
           <Button className="w-full" variant={"secondary"}>
             View source
           </Button>
