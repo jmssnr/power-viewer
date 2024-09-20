@@ -1,5 +1,7 @@
 import Link from "next/link";
 import CountrySelect from "./CountrySelect";
+import { Suspense } from "react";
+import { Skeleton } from "@/components/ui/Skeleton";
 
 const Header = () => {
   return (
@@ -11,7 +13,11 @@ const Header = () => {
         <Link href="/">Home</Link>
         <Link href="/analyze">Analyze</Link>
         <Link href="/about">About</Link>
-        <CountrySelect />
+        <Suspense
+          fallback={<Skeleton className="w-[180px] h-[30px] rounded-full" />}
+        >
+          <CountrySelect />
+        </Suspense>
       </nav>
     </header>
   );
