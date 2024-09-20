@@ -1,4 +1,3 @@
-import { useQuery } from "@tanstack/react-query";
 import { Country } from "@/app/api/countries/route";
 import { isServer, useSuspenseQuery } from "@tanstack/react-query";
 
