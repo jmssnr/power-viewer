@@ -1,4 +1,5 @@
-import { Country } from "@/app/api/countries/route";
+import { PowerGenerationDatum } from "@/app/api/power-generation/types";
+import { useQueryState } from "nuqs";
 import { isServer, useSuspenseQuery } from "@tanstack/react-query";
 
 function getBaseURL() {
@@ -12,8 +13,8 @@ function getBaseURL() {
 }
 const baseUrl = getBaseURL();
 
-const fetcher = async (): Promise<Country[]> => {
-  const url = baseUrl + "/api/countries";
+const fetcher = async (country: string): Promise<PowerGenerationDatum[]> => {
+  const url = baseUrl + `/api/power-generation?country=${country}`;
 
   const response = await fetch(url, { cache: "no-store" });
 
@@ -24,9 +25,11 @@ const fetcher = async (): Promise<Country[]> => {
   return response.json();
 };
 
-export const useGetCountries = () => {
+export const useGetPowerGeneration = () => {
+  const [country] = useQueryState("country");
   return useSuspenseQuery({
-    queryKey: ["countries"],
-    queryFn: () => fetcher(),
+    queryKey: ["power-generation", country],
+    queryFn: () => fetcher(country || "de"),
+    staleTime: 1000 * 60 * 15,
   });
 };
