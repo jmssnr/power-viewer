@@ -1,7 +1,6 @@
 "use client";
 
 import { Group } from "@visx/group";
-import colors from "tailwindcss/colors";
 import { scaleLinear } from "@visx/scale";
 import { max, min } from "@visx/vendor/d3-array";
 import { LinePath } from "@visx/shape";
