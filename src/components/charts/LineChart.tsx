@@ -5,7 +5,7 @@ import { scaleLinear } from "@visx/scale";
 import { max, min } from "@visx/vendor/d3-array";
 import { LinePath } from "@visx/shape";
 
-const MARGIN = { top: 5, bottom: 5, left: 5, right: 5 };
+const MARGIN = { top: 5, bottom: 5, left: 5, right: 15 };
 
 const LineChart = <Datum extends object>(props: {
   data: Datum[];
@@ -43,10 +43,21 @@ const LineChart = <Datum extends object>(props: {
     />
   );
 
+  const lastDatum = data[data.length - 1];
+  const dot = (
+    <circle
+      cx={xScale(xAccessor(lastDatum))}
+      cy={yScale(yAccessor(lastDatum))}
+      r={3}
+      fill="blue"
+    />
+  );
+
   return (
     <svg width={width} height={height}>
       <Group top={margin.top} left={margin.left}>
         {line}
+        {dot}
       </Group>
     </svg>
   );

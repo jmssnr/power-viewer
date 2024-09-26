@@ -39,12 +39,12 @@ const MultiSelect = ({ values, onValueChange, options }: MultiSelectProps) => {
               ))}
             </div>
           ) : (
-            "Select framework..."
+            "Select power type..."
           )}
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
-      <PopoverContent className="w-[350px] p-0" align="start">
+      <PopoverContent className="w-[370px] p-0" align="start">
         <Command>
           <CommandInput placeholder="Search framework..." />
           <CommandList>

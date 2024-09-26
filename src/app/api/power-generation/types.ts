@@ -3,7 +3,7 @@ export type ResponseType = {
     production_types: { name: string; data: number[] }[];
   };
   
-  type Datum = {
+  export type Datum = {
     timestamp: number, 
     value: number
   } 
