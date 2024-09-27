@@ -8,7 +8,6 @@ import {
   Chart,
   ChartContent,
   ChartLegend,
-  ChartSelection,
 } from "@/components/charts/Chart";
 import MultiLineChart from "@/components/charts/MultiLineChart";
 // import { Datum } from "@/app/api/power-generation/types";
