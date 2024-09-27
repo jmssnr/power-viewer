@@ -4,6 +4,13 @@ import MultiSelect from "@/components/ui/MultiSelect";
 import { useGetPowerGeneration } from "@/hooks/useGetPowerGeneration";
 import LineChart from "@/components/charts/LineChart";
 import { useState } from "react";
+import {
+  Chart,
+  ChartContent,
+  ChartControls,
+  ChartLegend,
+  ChartSelection,
+} from "@/components/charts/Chart";
 // import { Datum } from "@/app/api/power-generation/types";
 
 export default function AnalyzePage() {
@@ -32,7 +39,7 @@ export default function AnalyzePage() {
     };
   });
   return (
-    <div className="p-5">
+    <div className="p-5 h-full flex flex-col gap-3">
       <div className="flex justify-between items-center">
         <DateRangeSelect />
         <MultiSelect
@@ -41,6 +48,17 @@ export default function AnalyzePage() {
           onValueChange={setPower}
         />
       </div>
+      <Chart className="border flex-1">
+        <ChartLegend>Chart Legend</ChartLegend>
+        <ChartContent>
+          {(width, height) => (
+            <svg width={width} height={height}>
+              <rect width={width} height={height} fill="blue" />
+            </svg>
+          )}
+        </ChartContent>
+        <ChartSelection>Range Selection</ChartSelection>
+      </Chart>
     </div>
   );
 }

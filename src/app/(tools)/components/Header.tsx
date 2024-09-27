@@ -14,7 +14,7 @@ const Header = () => {
         <Link href="/analyze">Analyze</Link>
         <Link href="/about">About</Link>
         <Suspense
-          fallback={<Skeleton className="w-[180px] h-[30px] rounded-full" />}
+          fallback={<Skeleton className="w-[180px] h-[40px] rounded-full" />}
         >
           <CountrySelect />
         </Suspense>

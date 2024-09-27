@@ -6,9 +6,9 @@ export default function ToolLayout({
   children: React.ReactNode;
 }) {
   return (
-    <main className="flex flex-col">
+    <main>
       <Header />
-      <section className="flex-1">{children}</section>
+      <section className="h-[calc(100vh-60px)]">{children}</section>
     </main>
   );
 }
