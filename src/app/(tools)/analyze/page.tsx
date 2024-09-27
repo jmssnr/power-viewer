@@ -7,7 +7,6 @@ import { useState } from "react";
 import {
   Chart,
   ChartContent,
-  ChartControls,
   ChartLegend,
   ChartSelection,
 } from "@/components/charts/Chart";
