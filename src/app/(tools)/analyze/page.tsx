@@ -10,17 +10,18 @@ import {
   ChartLegend,
   ChartSelection,
 } from "@/components/charts/Chart";
+import MultiLineChart from "@/components/charts/MultiLineChart";
 // import { Datum } from "@/app/api/power-generation/types";
 
 export default function AnalyzePage() {
   const { data } = useGetPowerGeneration();
   const [power, setPower] = useState<string[]>([]);
 
-  // const datasets = data
-  //   .filter((d) => power.includes(d.name))
-  //   .map((d) => {
-  //     return { id: d.name, data: d.data };
-  //   });
+  const datasets = data
+    .filter((d) => power.includes(d.name))
+    .map((d) => {
+      return { id: d.name, data: d.data };
+    });
 
   const options = data.map((prod) => {
     return {
@@ -47,17 +48,20 @@ export default function AnalyzePage() {
           onValueChange={setPower}
         />
       </div>
-      <Chart className="border flex-1">
+      <Chart className="border flex-1 p-2">
         <ChartLegend>Chart Legend</ChartLegend>
         <ChartContent>
           {(width, height) => (
-            <svg width={width} height={height}>
-              <rect width={width} height={height} fill="blue" />
-            </svg>
+            <MultiLineChart
+              xAccessor={(d) => d.timestamp}
+              yAccessor={(d) => d.value}
+              width={width}
+              height={height}
+              datasets={datasets}
+            />
           )}
         </ChartContent>
-        <ChartSelection>Range Selection</ChartSelection>
-      </Chart>
+        </Chart>
     </div>
   );
 }
