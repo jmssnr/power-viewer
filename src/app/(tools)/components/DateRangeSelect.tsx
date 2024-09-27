@@ -65,7 +65,6 @@ const DateRangeSelect = () => {
               "justify-start text-left font-normal rounded-none rounded-tr-md rounded-br-md",
               !date && "text-muted-foreground"
             )}
-            size="sm"
           >
             <CalendarIcon className="mr-2 h-4 w-4" />
             {date?.from ? (

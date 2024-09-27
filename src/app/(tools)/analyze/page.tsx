@@ -34,12 +34,12 @@ export default function AnalyzePage() {
   return (
     <div className="p-5">
       <div className="flex justify-between items-center">
+        <DateRangeSelect />
         <MultiSelect
           options={options}
           values={power}
           onValueChange={setPower}
         />
-        <DateRangeSelect />
       </div>
     </div>
   );
