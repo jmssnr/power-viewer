@@ -4,7 +4,7 @@ import { ChartLineIcon, GithubIcon, HomeIcon, InfoIcon } from "lucide-react";
 
 const Sidebar = () => {
   return (
-    <aside className="w-[var(--sidebar-width)] border-r">
+    <aside className="w-[var(--sidebar-width)] border-r bg-white">
       <Image
         className="absolute top-[10px] left-[10px]"
         src="/power-views-logo.png"

@@ -9,7 +9,9 @@ export default function ToolLayout({
     <main className="grid grid-rows-[auto_1fr] grid-cols-[auto_1fr] h-screen">
       <Header />
       <Sidebar />
-      <section className="h-[calc(100vh-60px)]">{children}</section>
+      <section className="h-[calc(100vh-var(--header-height))]  bg-neutral-100">
+        {children}
+      </section>
     </main>
   );
 }
