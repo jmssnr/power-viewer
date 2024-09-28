@@ -23,7 +23,7 @@ const ChartContent = ({
   children: (width: number, height: number) => React.ReactNode;
 }) => {
   return (
-    <div className="flex-1 h-full min-h-44">
+    <div className="flex-1 h-full min-h-42">
       <ParentSize>{({ width, height }) => children(width, height)}</ParentSize>
     </div>
   );

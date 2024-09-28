@@ -1,6 +1,13 @@
 import Image from "next/image";
 import { Button } from "./ui/Button";
-import { ChartLineIcon, GithubIcon, HomeIcon, InfoIcon } from "lucide-react";
+import {
+  ChartLineIcon,
+  GithubIcon,
+  HomeIcon,
+  InfoIcon,
+  LinkedinIcon,
+} from "lucide-react";
+import { Separator } from "./ui/Separator";
 
 const Sidebar = () => {
   return (
@@ -12,7 +19,7 @@ const Sidebar = () => {
         height={40}
         alt="PowerViews"
       />
-      <nav className="flex flex-col items-center w-full">
+      <nav className="flex flex-col items-center w-full p-3">
         <Button size="icon" variant={"ghost"}>
           <HomeIcon className="stroke-2 h-4 w-4" />
         </Button>
@@ -22,8 +29,12 @@ const Sidebar = () => {
         <Button size="icon" variant={"ghost"}>
           <InfoIcon className="stroke-2 h-4 w-4" />
         </Button>
+        <Separator />
         <Button size="icon" variant={"ghost"}>
           <GithubIcon className="stroke-2 h-4 w-4" />
+        </Button>
+        <Button size="icon" variant={"ghost"}>
+          <LinkedinIcon className="stroke-2 h-4 w-4" />
         </Button>
       </nav>
     </aside>
