@@ -59,6 +59,7 @@ const MultiLineChart = <Datum extends object>(props: {
 
   const lines = datasets.map((dataset) => (
     <LinePath
+      key={dataset.id}
       data={dataset.data}
       x={(d: Datum) => xScale(xAccessor(d)) || 0}
       y={(d: Datum) => yScale(yAccessor(d)) || 0}
