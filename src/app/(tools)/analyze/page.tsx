@@ -1,66 +1,29 @@
 "use client";
+
 import DateRangeSelect from "../components/DateRangeSelect";
-import MultiSelect from "@/components/ui/MultiSelect";
-import { useGetPowerGeneration } from "@/hooks/useGetPowerGeneration";
-import LineChart from "@/components/charts/LineChart";
-import { useState } from "react";
-import {
-  Chart,
-  ChartContent,
-  ChartLegend,
-} from "@/components/charts/Chart";
-import MultiLineChart from "@/components/charts/MultiLineChart";
-// import { Datum } from "@/app/api/power-generation/types";
+import { Suspense } from "react";
+import { Skeleton } from "@/components/ui/Skeleton";
+import PowerSelect from "../components/PowerSelect";
+import PowerChart from "../components/PowerChart";
 
 export default function AnalyzePage() {
-  const { data } = useGetPowerGeneration();
-  const [power, setPower] = useState<string[]>([]);
-
-  const datasets = data
-    .filter((d) => power.includes(d.name))
-    .map((d) => {
-      return { id: d.name, data: d.data };
-    });
-
-  const options = data.map((prod) => {
-    return {
-      value: prod.name,
-      label: prod.name,
-      chart: (
-        <LineChart
-          width={100}
-          height={20}
-          data={prod.data}
-          xAccessor={(d) => d.timestamp}
-          yAccessor={(d) => d.value}
-        />
-      ),
-    };
-  });
   return (
     <div className="p-5 h-full flex flex-col gap-3">
       <div className="flex justify-between items-center">
-        <DateRangeSelect />
-        <MultiSelect
-          options={options}
-          values={power}
-          onValueChange={setPower}
-        />
+        <Suspense
+          fallback={<Skeleton className="w-[150px] h-[40px] rounded-full" />}
+        >
+          <DateRangeSelect />
+        </Suspense>
+        <Suspense
+          fallback={<Skeleton className="w-[150px] h-[40px] rounded-full" />}
+        >
+          <PowerSelect />
+        </Suspense>
       </div>
-      <Chart className="border flex-1 p-2">
-        <ChartLegend>Chart Legend</ChartLegend>
-        <ChartContent>
-          {(width, height) => (
-            <MultiLineChart
-              xAccessor={(d) => d.timestamp}
-              yAccessor={(d) => d.value}
-              width={width}
-              height={height}
-              datasets={datasets}
-            />
-          )}
-        </ChartContent>
-        </Chart>
+      <Suspense fallback={<Skeleton className="flex-1 rounded-lg w-full" />}>
+        <PowerChart />
+      </Suspense>
     </div>
   );
 }
