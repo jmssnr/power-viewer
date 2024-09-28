@@ -4,7 +4,7 @@ import { Suspense } from "react";
 
 const Header = () => {
   return (
-    <header className="flex bg-white justify-between items-center p-2 pl-0 justify-self-end h-[var(--header-height)] border-b col-span-2 w-[calc(100%-var(--sidebar-width))]">
+    <header className="flex bg-primary-background justify-between items-center p-2 pl-0 justify-self-end h-[var(--header-height)] border-b col-span-2 w-[calc(100%-var(--sidebar-width))]">
       <p>
         Power<span className="font-semibold">Viewer</span>
       </p>

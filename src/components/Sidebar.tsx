@@ -11,7 +11,7 @@ import { Separator } from "./ui/Separator";
 
 const Sidebar = () => {
   return (
-    <aside className="w-[var(--sidebar-width)] border-r bg-white">
+    <aside className="w-[var(--sidebar-width)] border-r bg-primary-background">
       <Image
         className="absolute top-[10px] left-[10px]"
         src="/power-views-logo.png"

@@ -67,18 +67,9 @@ const MultiLineChart = <Datum extends object>(props: {
     />
   ));
 
-  const background = (
-    <rect
-      width={innerWidth}
-      height={innerHeight}
-      fill={colors.neutral["100"]}
-    />
-  );
-
   return (
     <svg width={width} height={height}>
       <Group top={margin.top} left={margin.left}>
-        {background}
         {lines}
       </Group>
     </svg>
