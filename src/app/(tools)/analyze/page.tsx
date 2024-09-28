@@ -11,7 +11,7 @@ export default function AnalyzePage() {
     <div className="p-5 h-full flex flex-col gap-3">
       <div className="flex justify-between items-center">
         <Suspense
-          fallback={<Skeleton className="w-[150px] h-[40px] rounded-full" />}
+          fallback={<Skeleton className="w-[350px] h-[40px] rounded-full" />}
         >
           <DateRangeSelect />
         </Suspense>

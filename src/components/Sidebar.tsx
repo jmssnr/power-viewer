@@ -19,7 +19,7 @@ const Sidebar = () => {
         height={40}
         alt="PowerViews"
       />
-      <nav className="flex flex-col items-center w-full p-3">
+      <nav className="flex flex-col items-center w-full p-3 gap-2">
         <Button size="icon" variant={"ghost"}>
           <HomeIcon className="stroke-2 h-4 w-4" />
         </Button>
