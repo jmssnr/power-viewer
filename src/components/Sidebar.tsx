@@ -66,7 +66,7 @@ const Sidebar = () => {
           alt="PowerViews"
         />
       </Link>
-      <nav className="flex flex-col items-center w-full p-3 gap-2">
+      <nav className="flex flex-col items-center w-full p-2 gap-2">
         {navLinks.map((item, i) => (
           <SidebarNavItem key={i} {...item} />
         ))}
