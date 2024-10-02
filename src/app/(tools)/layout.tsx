@@ -6,12 +6,14 @@ export default function ToolLayout({
   children: React.ReactNode;
 }) {
   return (
-    <main className="grid grid-rows-[auto_1fr] grid-cols-[auto_1fr] h-screen">
-      <Header />
+    <main className="grid grid-cols-[auto_1fr] h-screen">
       <Sidebar />
-      <section className="h-[calc(100vh-var(--header-height))] w-[calc(100vw-var(--sidebar-width)) bg-slate-100">
-        {children}
-      </section>
+      <div className="flex flex-col">
+        <Header />
+        <section className="flex-1 h-[calc(100vh-var(--header-height))">
+          {children}
+        </section>
+      </div>
     </main>
   );
 }
